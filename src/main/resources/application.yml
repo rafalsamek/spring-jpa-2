@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    username: wreczyck
+    password: <password>
+    url: jdbc:sqlserver://morfeusz.wszib.edu.pl:1433;databaseName=wreczyck
+  sql:
+    init:
+      mode: always
+  flyway:
+    user: wreczyck
+    password: <password>
+    url: jdbc:sqlserver://morfeusz.wszib.edu.pl:1433;databaseName=wreczyck
+    locations: classpath:db/migration
+    schemas: [wreczyck]
