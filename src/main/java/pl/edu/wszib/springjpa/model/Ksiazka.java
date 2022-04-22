@@ -1,16 +1,13 @@
 package pl.edu.wszib.springjpa.model;
 
-import java.time.Instant;
+import java.util.List;
 
 public class Ksiazka {
 
   private Integer id;
-  private String nazwa;
-  private String isbn;
+  private List<Autor> autorzy;
+  private String tytul;
   private String gatunek;
-
-  private Instant createdAt;
-  private Instant updatedAt;
 
   public Integer getId() {
     return id;
@@ -20,20 +17,20 @@ public class Ksiazka {
     this.id = id;
   }
 
-  public String getNazwa() {
-    return nazwa;
+  public List<Autor> getAutorzy() {
+    return autorzy;
   }
 
-  public void setNazwa(String nazwa) {
-    this.nazwa = nazwa;
+  public void setAutorzy(List<Autor> autorzy) {
+    this.autorzy = autorzy;
   }
 
-  public String getIsbn() {
-    return isbn;
+  public String getTytul() {
+    return tytul;
   }
 
-  public void setIsbn(String isbn) {
-    this.isbn = isbn;
+  public void setTytul(String tytul) {
+    this.tytul = tytul;
   }
 
   public String getGatunek() {
@@ -42,21 +39,5 @@ public class Ksiazka {
 
   public void setGatunek(String gatunek) {
     this.gatunek = gatunek;
-  }
-
-  public Instant getCreatedAt() {
-    return createdAt;
-  }
-
-  public void setCreatedAt(Instant createdAt) {
-    this.createdAt = createdAt;
-  }
-
-  public Instant getUpdatedAt() {
-    return updatedAt;
-  }
-
-  public void setUpdatedAt(Instant updatedAt) {
-    this.updatedAt = updatedAt;
   }
 }

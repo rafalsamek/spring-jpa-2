@@ -1,7 +1,5 @@
 package pl.edu.wszib.springjpa.model;
 
-import org.springframework.format.annotation.DateTimeFormat;
-
 import java.time.Instant;
 import java.util.List;
 
@@ -11,11 +9,19 @@ public class CV {
   private String imie;
   private String nazwisko;
   private Instant dataUrodzenia;
-  private byte[] zdjecie;
+  private Adres adres;
   private List<Praca> doswiadczenie;
   private List<Kompetencja> kompetencje;
   private Instant createdAt;
   private Instant updatedAt;
+
+  public Adres getAdres() {
+    return adres;
+  }
+
+  public void setAdres(Adres adres) {
+    this.adres = adres;
+  }
 
   public Integer getId() {
     return id;
@@ -47,14 +53,6 @@ public class CV {
 
   public void setDataUrodzenia(Instant dataUrodzenia) {
     this.dataUrodzenia = dataUrodzenia;
-  }
-
-  public byte[] getZdjecie() {
-    return zdjecie;
-  }
-
-  public void setZdjecie(byte[] zdjecie) {
-    this.zdjecie = zdjecie;
   }
 
   public List<Praca> getDoswiadczenie() {
