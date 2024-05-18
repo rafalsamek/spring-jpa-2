@@ -4,15 +4,24 @@ import jakarta.persistence.*;
 
 @Entity
 public class Organizacja {
+
     @Id
     @GeneratedValue
     private Long id;
 
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private DetaleOrganizacji detaleOrganizacji;
+
+    public DetaleOrganizacji getDetaleOrganizacji() {
+        return detaleOrganizacji;
+    }
+
+    public void setDetaleOrganizacji(DetaleOrganizacji detaleOrganizacji) {
+        this.detaleOrganizacji = detaleOrganizacji;
+    }
 
     public Long getId() {
         return id;
@@ -28,13 +37,5 @@ public class Organizacja {
 
     public void setName(String name) {
         this.name = name;
-    }
-
-    public DetaleOrganizacji getDetaleOrganizacji() {
-        return detaleOrganizacji;
-    }
-
-    public void setDetaleOrganizacji(DetaleOrganizacji detaleOrganizacji) {
-        this.detaleOrganizacji = detaleOrganizacji;
     }
 }

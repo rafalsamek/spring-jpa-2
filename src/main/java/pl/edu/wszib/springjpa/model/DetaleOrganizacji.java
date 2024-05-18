@@ -6,6 +6,7 @@ import jakarta.persistence.Id;
 
 @Entity
 public class DetaleOrganizacji {
+
     @Id
     @GeneratedValue
     private Long id;
