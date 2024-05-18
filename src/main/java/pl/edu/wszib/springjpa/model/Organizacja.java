@@ -11,7 +11,7 @@ public class Organizacja {
 
     private String name;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @PrimaryKeyJoinColumn
     private DetaleOrganizacji detaleOrganizacji;
 
