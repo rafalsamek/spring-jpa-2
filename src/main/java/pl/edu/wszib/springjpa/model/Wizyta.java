@@ -10,6 +10,7 @@ public class Wizyta {
   @Id
   @GeneratedValue
   private Integer id;
+
   @ManyToOne
   @JoinColumn
   private Gabinet gabinet;
