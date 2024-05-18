@@ -1,19 +1,32 @@
 package pl.edu.wszib.springjpa.model;
 
+import jakarta.persistence.*;
+import org.hibernate.annotations.OnDelete;
+import org.hibernate.annotations.OnDeleteAction;
+
 import java.util.List;
 
-public class Zajęcia {
+@Entity
+public class Zajecia {
 
-  private Integer id;
+  @Id
+  @GeneratedValue
+  private Long id;
   private String nazwa;
+
+  @ManyToMany
+  @JoinTable
   private List<Student> student;
+
+  @ManyToOne
+  @JoinColumn
   private Prowadzacy prowadzacy;
 
-  public Integer getId() {
+  public Long getId() {
     return id;
   }
 
-  public void setId(Integer id) {
+  public void setId(Long id) {
     this.id = id;
   }
 
