@@ -16,9 +16,24 @@ public class TodoController {
         this.service = service;
     }
 
+    @GetMapping("/upcoming/list")
+    public List<Todo> upcoming() {
+        return service.upcoming();
+    }
+
+    @GetMapping("/search/{status}")
+    public List<Todo> searchByStatus(@PathVariable Todo.TodoStatus status) {
+        return service.searchByStatus(status);
+    }
+
+    @GetMapping("/count/{status}")
+    public int countByStatus(@PathVariable Todo.TodoStatus status) {
+        return service.countByStatus(status);
+    }
+
     @GetMapping
-    public List<Todo> list() {
-        return service.list();
+    public List<Todo> list(@RequestParam(required = false, defaultValue = "asc") String order) {
+        return service.list(order);
     }
 
     @GetMapping("/{id}")
